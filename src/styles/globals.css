@@ -4,3 +4,296 @@
   --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif,
     "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
+
+/* Custom animations */
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fade-up {
+  0% {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slide-down {
+  0% {
+    transform: translateY(-8px);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slide-up {
+  0% {
+    transform: translateY(8px);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes bounce-in {
+  0% {
+    transform: scale(0.95);
+    opacity: 0;
+  }
+
+  60% {
+    transform: scale(1.02);
+    opacity: 1;
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes pulse-wave {
+  0% {
+    width: 20%;
+  }
+
+  50% {
+    width: 85%;
+  }
+
+  100% {
+    width: 20%;
+  }
+}
+
+@keyframes typing {
+  0% {
+    width: 0ch;
+  }
+
+  100% {
+    width: 20ch;
+  }
+}
+
+@keyframes cursor {
+
+  0%,
+  49% {
+    opacity: 0;
+  }
+
+  50%,
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fade-in-up {
+  0% {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slide-left {
+  0% {
+    transform: translateX(20px);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slide-right {
+  0% {
+    transform: translateX(-20px);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* Animation classes */
+.animate-fade-in {
+  animation: fade-in 300ms ease-out both;
+}
+
+.animate-fade-up {
+  animation: fade-up 400ms ease-out both;
+}
+
+.animate-fade-up-delay {
+  animation: fade-up 600ms ease-out both;
+}
+
+.animate-fade-up-delay-2 {
+  animation: fade-up 800ms ease-out both;
+}
+
+.animate-fade-up-delay-3 {
+  animation: fade-up 1000ms ease-out both;
+}
+
+.animate-slide-down {
+  animation: slide-down 250ms ease-out both;
+}
+
+.animate-slide-up {
+  animation: slide-up 400ms ease-out both;
+}
+
+.animate-slide-up-delay {
+  animation: slide-up 600ms ease-out both;
+}
+
+.animate-slide-up-delay-2 {
+  animation: slide-up 800ms ease-out both;
+}
+
+.animate-slide-up-delay-3 {
+  animation: slide-up 1000ms ease-out both;
+}
+
+.animate-bounce-in {
+  animation: bounce-in 500ms ease-out both;
+}
+
+.animate-pulse-wave {
+  animation: pulse-wave 1.8s ease-in-out infinite;
+}
+
+.animate-fade-in-delay {
+  animation: fade-in 400ms ease-out 200ms both;
+}
+
+.animate-fade-in-delay-2 {
+  animation: fade-in 400ms ease-out 400ms both;
+}
+
+.animate-fade-in-delay-3 {
+  animation: fade-in 400ms ease-out 600ms both;
+}
+
+.animate-fade-up-delay-4 {
+  animation: fade-up 400ms ease-out 800ms both;
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 500ms ease-out both;
+}
+
+.animate-fade-in-up-delay {
+  animation: fade-in-up 500ms ease-out 200ms both;
+}
+
+.animate-fade-in-up-delay-2 {
+  animation: fade-in-up 500ms ease-out 400ms both;
+}
+
+.animate-slide-left {
+  animation: slide-left 600ms ease-out both;
+}
+
+.animate-slide-right {
+  animation: slide-right 600ms ease-out both;
+}
+
+.animate-slide-up-delay-4 {
+  animation: slide-up 400ms ease-out 800ms both;
+}
+
+.animate-slide-up-delay-5 {
+  animation: slide-up 400ms ease-out 1000ms both;
+}
+
+.typewriter {
+  overflow: hidden;
+  border-right: 2px solid #3b82f6;
+  white-space: nowrap;
+  animation: typing 2s steps(40, end), cursor 1s step-end infinite;
+}
+
+/* Signature animation */
+.signature-container {
+  position: relative;
+  display: inline-block;
+}
+
+.signature-text-wrapper {
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.signature-text {
+  display: inline-block;
+  font-family: cursive;
+  font-size: 1.5rem;
+  color: #3b82f6;
+  opacity: 0.7;
+  animation: signature-write 3s ease-in-out infinite;
+}
+
+@keyframes signature-write {
+  0% {
+    width: 0;
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 0.7;
+  }
+
+  100% {
+    width: 100%;
+    opacity: 0.7;
+  }
+}
+
+/* Industry cards hover effects */
+.legal-paper:hover {
+  transform: rotate(-10deg) scale(1.05) !important;
+  z-index: 50 !important;
+}
+
+.education-paper:hover {
+  transform: rotate(-2deg) scale(1.05) !important;
+  z-index: 50 !important;
+}
+
+.finance-paper:hover {
+  transform: rotate(2deg) scale(1.05) !important;
+  z-index: 50 !important;
+}
+
+.healthcare-paper:hover {
+  transform: rotate(10deg) scale(1.05) !important;
+  z-index: 50 !important;
+}

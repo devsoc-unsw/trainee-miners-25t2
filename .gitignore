@@ -44,3 +44,13 @@ yarn-error.log*
 
 # idea files
 .idea
+
+# WebSocket server specific
+ws-transcription/node_modules
+ws-transcription/dist
+ws-transcription/.env
+ws-transcription/npm-debug.log*
+ws-transcription/yarn-debug.log*
+ws-transcription/yarn-error.log*
+ws-transcription/.pnpm-debug.log*
+ws-transcription/*.tsbuildinfo
