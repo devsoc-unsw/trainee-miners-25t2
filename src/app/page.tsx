@@ -70,7 +70,7 @@ export default function HomePage() {
             <Link href="/register">
               <Button
                 size="sm"
-                className="bg-blue-600 hover:bg-blue-700 hover:scale-105 transition-all duration-300"
+                className="bg-blue-600 hover:bg-blue-700 hover:scale-105 transition-all duration-300 text-white"
               >
                 Get Started
               </Button>
@@ -123,7 +123,7 @@ export default function HomePage() {
                   </Button>
                 </Link>
                 <Link href="/register" onClick={() => setIsMobileMenuOpen(false)}>
-                  <Button className="w-full bg-blue-600 hover:bg-blue-700 transition-all duration-300">
+                  <Button className="w-full bg-blue-600 hover:bg-blue-700 transition-all duration-300 text-white">
                     Get Started
                   </Button>
                 </Link>
@@ -269,7 +269,7 @@ export default function HomePage() {
             <Link href="/register" className="w-full sm:w-auto">
               <Button
                 size="lg"
-                className="w-full sm:w-auto bg-blue-600 hover:bg-blue-700 text-base sm:text-lg px-6 sm:px-8 py-3 hover:scale-105 transition-all duration-300 group"
+                className="w-full sm:w-auto bg-blue-600 hover:bg-blue-700 text-base sm:text-lg px-6 sm:px-8 py-3 hover:scale-105 transition-all duration-300 group text-white"
               >
                 Get Started
                 <ArrowRight className="ml-2 w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform duration-300" />
@@ -740,7 +740,7 @@ export default function HomePage() {
           </p>
           <div className="max-w-md mx-auto mb-8 animate-slide-up px-4">
             <Link href="/register" className="w-full sm:w-auto">
-              <Button className="w-full sm:w-auto bg-blue-600 hover:bg-blue-700 hover:scale-105 transition-all duration-300 whitespace-nowrap">
+              <Button className="w-full sm:w-auto bg-blue-600 hover:bg-blue-700 hover:scale-105 transition-all duration-300 whitespace-nowrap text-white">
                 Get Started
               </Button>
             </Link>
