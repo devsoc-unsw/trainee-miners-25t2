@@ -40,11 +40,11 @@
   animation: animate 4s linear infinite;
 }
 .ring i:nth-child(3) {
-  border-radius: 41% 44% 56% 59%/38% 62% 63% 37%;
+  border-radius: 45% 40% 58% 52%/36% 64% 68% 45%;
   animation: animate 8s linear infinite;
 }
 .ring:hover i {
-  border: 6px solid var(--clr);
+  border: 5px solid var(--clr);
   filter: drop-shadow(0 0 20px var(--clr));
 }
 @keyframes animate { to { transform: rotate(360deg); } }
