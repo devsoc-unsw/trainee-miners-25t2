@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap");
-/* was: * { ... } */
+
 .page * {
   margin: 0;
   padding: 0;
@@ -7,18 +7,16 @@
   font-family: "Quicksand", sans-serif;
 }
 
-/* was: body { ... } */
 .page {
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  background: #111;
+  background: #fff;
   width: 100%;
   overflow: hidden;
 }
 
-/* your existing classes unchanged */
 .ring {
   position: relative;
   width: 500px;
@@ -30,7 +28,7 @@
 .ring i {
   position: absolute;
   inset: 0;
-  border: 2px solid #fff;
+  border: 2px solid #111;
   transition: 0.5s;
 }
 .ring i:nth-child(1) {
@@ -43,7 +41,7 @@
 }
 .ring i:nth-child(3) {
   border-radius: 41% 44% 56% 59%/38% 62% 63% 37%;
-  animation: animate2 10s linear infinite;
+  animation: animate 8s linear infinite;
 }
 .ring:hover i {
   border: 6px solid var(--clr);
@@ -62,26 +60,28 @@
   flex-direction: column;
   gap: 20px;
 }
-.login h2 { font-size: 2em; color: #fff; }
+.login h2 { font-size: 2em; color: #111; }
 
 .inputBx { position: relative; width: 100%; }
 .inputBx input {
   width: 100%;
   padding: 12px 20px;
   background: transparent;
-  border: 2px solid #fff;
+  border: 2px solid #111;
   border-radius: 40px;
   font-size: 1.2em;
-  color: #fff;
+  color: #111;
   outline: none;
 }
 .inputBx input[type="submit"] {
   width: 100%;
-  background: linear-gradient(45deg, #ff357a, #fff172);
+  background: linear-gradient(45deg, #155dfc, #9810fa);
   border: none;
   cursor: pointer;
 }
-.inputBx input::placeholder { color: rgba(255,255,255,0.75); }
+.inputBxAccent input{ color: #fff;}
+
+.inputBx input::placeholder { color: rgba(0, 0, 0, 0.75); }
 
 .links {
   width: 100%;
@@ -90,4 +90,4 @@
   justify-content: space-between;
   padding: 0 20px;
 }
-.links a { color: #fff; text-decoration: none; }
+.links a { color: #111; text-decoration: none; }

@@ -24,7 +24,6 @@ import { ArrowLeft } from "lucide-react";
 //   );
 // }
 
-// components/LoginCard.tsx
 import * as React from "react";
 import styles from "./page.module.css";
 
@@ -32,18 +31,18 @@ export default function LoginPage() {
   return (
     <div className={styles.page}>
       <div className={styles.ring}>
-        <i style={{ ["--clr" as any]: "#00ff0a" }} />
-        <i style={{ ["--clr" as any]: "#ff0057" }} />
-        <i style={{ ["--clr" as any]: "#fffd44" }} />
+        <i style={{ ["--clr" as any]: "#b0a8b9" }} />
+        <i style={{ ["--clr" as any]: "#845ec2" }} />
+        <i style={{ ["--clr" as any]: "#4b4453" }} />
         <div className={styles.login}>
-          <h2>Login</h2>
+          <h2>Welcome Back!</h2>
           <div className={styles.inputBx}>
             <input type="text" placeholder="Username" />
           </div>
           <div className={styles.inputBx}>
             <input type="password" placeholder="Password" />
           </div>
-          <div className={styles.inputBx}>
+          <div className={`${styles.inputBx} ${styles.inputBxAccent}`}>
             <input type="submit" value="Sign in" />
           </div>
           <div className={styles.links}>
