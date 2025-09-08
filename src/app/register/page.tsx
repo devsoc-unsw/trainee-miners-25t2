@@ -1,24 +1,54 @@
+// src/app/register/page.tsx
+import styles from "./page.module.css";
 import Link from "next/link";
-import { Button } from "~/components/ui/button";
-import { ArrowLeft } from "lucide-react";
 
 export default function RegisterPage() {
-    return (
-        <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50 flex items-center justify-center px-4">
-            <div className="max-w-md w-full bg-white rounded-2xl shadow-xl p-8">
-                <div className="text-center">
-                    <h1 className="text-3xl font-bold text-gray-900 mb-4">Get Started</h1>
-                    <p className="text-gray-600 mb-8">
-                        Registration functionality coming soon! We&apos;re building an amazing onboarding experience for you.
-                    </p>
-                    <Link href="/">
-                        <Button className="inline-flex items-center">
-                            <ArrowLeft className="w-4 h-4 mr-2" />
-                            Back to Home
-                        </Button>
-                    </Link>
-                </div>
-            </div>
+  return (
+    <section className={styles.root}>
+      <div className={`${styles.container} ${styles.active}`}>
+        <div className={`${styles.user} ${styles.signupBx}`}>
+          <div className={styles.formBx}>
+            <form>
+              <h2>Create an account</h2>
+              <input
+                type="text"
+                name="username"
+                placeholder="Username"
+                required
+              />
+              <input
+                type="email"
+                name="email"
+                placeholder="Email Address"
+                required
+              />
+              <input
+                type="password"
+                name="password"
+                placeholder="Create Password"
+                required
+              />
+              <input
+                type="password"
+                name="confirm"
+                placeholder="Confirm Password"
+                required
+              />
+              <input type="submit" value="Sign Up" />
+              <p className={styles.signup}>
+                Already have an account? <Link href="/login">Sign in.</Link>
+              </p>
+            </form>
+          </div>
+
+          <div className={styles.imgBx}>
+            <img
+              src="https://raw.githubusercontent.com/WoojinFive/CSS_Playground/master/Responsive%20Login%20and%20Registration%20Form/img2.jpg"
+              alt="Create your account"
+            />
+          </div>
         </div>
-    );
+      </div>
+    </section>
+  );
 }
