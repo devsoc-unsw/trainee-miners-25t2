@@ -47,8 +47,8 @@ export default function LoginPage() {
             <input type="submit" value="Sign in" />
           </div>
           <div className={styles.links}>
-            <a href="#">Back to home</a>
-            <a href="#">Signup</a>
+            <a href="/">Back to home</a>
+            <a href="/register">Signup</a>
           </div>
         </div>
       </div>
