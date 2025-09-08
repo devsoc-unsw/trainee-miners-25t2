@@ -41,6 +41,9 @@ export default function LoginPage() {
             <div className={`${styles.inputBx} ${styles.inputBxAccent}`}>
               <input type="submit" value="Sign in" />
             </div>
+            <div className={`${styles.inputBx} ${styles.inputBxAccent}`}>
+              <input type="submit" value="Sign in with Google" />
+            </div>
           </div>
         </div>
       </div>
