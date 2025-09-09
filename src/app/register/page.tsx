@@ -26,9 +26,9 @@ export default function LoginPage() {
 
       <div className={styles.page}>
         <div className={styles.ring}>
-          <i style={{ ["--clr" as any]: "#b0a8b9" }} />
-          <i style={{ ["--clr" as any]: "#845ec2" }} />
-          <i style={{ ["--clr" as any]: "#4b4453" }} />
+          <i style={{ ["--clr" as any]: "#D9DD92" }} />
+          <i style={{ ["--clr" as any]: "#311E10" }} />
+          <i style={{ ["--clr" as any]: "#DD6031" }} />
           <div className={styles.login}>
             <h2>Sign up here!</h2>
 
