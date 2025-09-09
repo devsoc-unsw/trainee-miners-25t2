@@ -17,8 +17,8 @@ export default function LoginPage() {
 
           <nav className="flex items-center gap-4 text-sm text-gray-600">
             <Link href="/">Home</Link>
-            <Link href="/register" className="rounded-lg border px-3 py-1.5">
-              Sign up
+            <Link href="/login" className="rounded-lg border px-3 py-1.5">
+              Already registered? Sign in here
             </Link>
           </nav>
         </div>
