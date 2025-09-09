@@ -1,54 +1,55 @@
-// src/app/register/page.tsx
+import * as React from "react";
 import styles from "./page.module.css";
+import { Mic } from "lucide-react";
 import Link from "next/link";
 
-export default function RegisterPage() {
+export default function LoginPage() {
   return (
-    <section className={styles.root}>
-      <div className={`${styles.container} ${styles.active}`}>
-        <div className={`${styles.user} ${styles.signupBx}`}>
-          <div className={styles.formBx}>
-            <form>
-              <h2>Create an account</h2>
-              <input
-                type="text"
-                name="username"
-                placeholder="Username"
-                required
-              />
-              <input
-                type="email"
-                name="email"
-                placeholder="Email Address"
-                required
-              />
-              <input
-                type="password"
-                name="password"
-                placeholder="Create Password"
-                required
-              />
-              <input
-                type="password"
-                name="confirm"
-                placeholder="Confirm Password"
-                required
-              />
-              <input type="submit" value="Sign Up" />
-              <p className={styles.signup}>
-                Already have an account? <Link href="/login">Sign in.</Link>
-              </p>
-            </form>
+    <>
+      <header className="sticky top-0 z-50 bg-white/70 shadow-sm backdrop-blur-sm">
+        <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4">
+          <div className="animate-fade-in flex items-center gap-2">
+            <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-r from-blue-600 to-purple-600">
+              <Mic className="h-6 w-6 text-white" />
+            </div>
+            <span className="text-xl font-bold text-gray-900">Formify</span>
           </div>
 
-          <div className={styles.imgBx}>
-            <img
-              src="https://raw.githubusercontent.com/WoojinFive/CSS_Playground/master/Responsive%20Login%20and%20Registration%20Form/img2.jpg"
-              alt="Create your account"
-            />
+          <nav className="flex items-center gap-4 text-sm text-gray-600">
+            <Link href="/">Home</Link>
+            <Link href="/register" className="rounded-lg border px-3 py-1.5">
+              Sign up
+            </Link>
+          </nav>
+        </div>
+      </header>
+
+      <div className={styles.page}>
+        <div className={styles.ring}>
+          <i style={{ ["--clr" as any]: "#b0a8b9" }} />
+          <i style={{ ["--clr" as any]: "#845ec2" }} />
+          <i style={{ ["--clr" as any]: "#4b4453" }} />
+          <div className={styles.login}>
+            <h2>Sign up here!</h2>
+
+            <div className={styles.inputBx}>
+              <input type="text" placeholder="Username" />
+            </div>
+            <div className={styles.inputBx}>
+              <input type="text" placeholder="Email" />
+            </div>
+            <div className={styles.inputBx}>
+              <input type="password" placeholder="Password" />
+            </div>
+            <div className={`${styles.inputBx} ${styles.inputBxAccent}`}>
+              <input type="submit" value="Register!" />
+            </div>
+            <div className={`${styles.inputBx} ${styles.inputBxAccent}`}>
+              <input type="submit" value="Sign up with Google" />
+            </div>
           </div>
         </div>
       </div>
-    </section>
+    </>
   );
 }
