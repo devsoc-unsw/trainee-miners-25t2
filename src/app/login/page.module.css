@@ -19,8 +19,8 @@
 
 .ring {
   position: relative;
-  width: 500px;
-  height: 500px;
+  width: 575px;
+  height: 575px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -47,8 +47,16 @@
   border: 5px solid var(--clr);
   filter: drop-shadow(0 0 20px var(--clr));
 }
-@keyframes animate { to { transform: rotate(360deg); } }
-@keyframes animate2 { to { transform: rotate(0deg); } }
+@keyframes animate {
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes animate2 {
+  to {
+    transform: rotate(0deg);
+  }
+}
 
 .login {
   position: absolute;
@@ -60,9 +68,15 @@
   flex-direction: column;
   gap: 20px;
 }
-.login h2 { font-size: 2em; color: #111; }
+.login h2 {
+  font-size: 2em;
+  color: #111;
+}
 
-.inputBx { position: relative; width: 100%; }
+.inputBx {
+  position: relative;
+  width: 100%;
+}
 .inputBx input {
   width: 100%;
   padding: 12px 20px;
@@ -79,9 +93,13 @@
   border: none;
   cursor: pointer;
 }
-.inputBxAccent input{ color: #fff;}
+.inputBxAccent input {
+  color: #fff;
+}
 
-.inputBx input::placeholder { color: rgba(0, 0, 0, 0.75); }
+.inputBx input::placeholder {
+  color: rgba(0, 0, 0, 0.75);
+}
 
 .links {
   width: 100%;
@@ -90,4 +108,7 @@
   justify-content: space-between;
   padding: 0 20px;
 }
-.links a { color: #111; text-decoration: none; }
+.links a {
+  color: #111;
+  text-decoration: none;
+}
