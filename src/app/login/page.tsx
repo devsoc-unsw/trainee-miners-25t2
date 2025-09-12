@@ -2,6 +2,7 @@ import * as React from "react";
 import styles from "./page.module.css";
 import { Mic } from "lucide-react";
 import Link from "next/link";
+import { GoogleButton } from "./googleSignIn";
 
 export default function LoginPage() {
   return (
@@ -41,9 +42,10 @@ export default function LoginPage() {
             <div className={`${styles.inputBx} ${styles.inputBxAccent}`}>
               <input type="submit" value="Sign in" />
             </div>
-            <div className={`${styles.inputBx} ${styles.inputBxAccent}`}>
+            {/* <div className={`${styles.inputBx} ${styles.inputBxAccent}`}>
               <input type="submit" value="Sign in with Google" />
-            </div>
+            </div> */}
+            <GoogleButton />
           </div>
         </div>
       </div>
