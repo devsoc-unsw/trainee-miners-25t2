@@ -1,24 +1,55 @@
+import * as React from "react";
+import styles from "./page.module.css";
+import { Mic } from "lucide-react";
 import Link from "next/link";
-import { Button } from "~/components/ui/button";
-import { ArrowLeft } from "lucide-react";
 
-export default function RegisterPage() {
-    return (
-        <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50 flex items-center justify-center px-4">
-            <div className="max-w-md w-full bg-white rounded-2xl shadow-xl p-8">
-                <div className="text-center">
-                    <h1 className="text-3xl font-bold text-gray-900 mb-4">Get Started</h1>
-                    <p className="text-gray-600 mb-8">
-                        Registration functionality coming soon! We&apos;re building an amazing onboarding experience for you.
-                    </p>
-                    <Link href="/">
-                        <Button className="inline-flex items-center">
-                            <ArrowLeft className="w-4 h-4 mr-2" />
-                            Back to Home
-                        </Button>
-                    </Link>
-                </div>
+export default function LoginPage() {
+  return (
+    <>
+      <header className="sticky top-0 z-50 bg-white/70 shadow-sm backdrop-blur-sm">
+        <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4">
+          <div className="animate-fade-in flex items-center gap-2">
+            <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-r from-blue-600 to-purple-600">
+              <Mic className="h-6 w-6 text-white" />
             </div>
+            <span className="text-xl font-bold text-gray-900">Formify</span>
+          </div>
+
+          <nav className="flex items-center gap-4 text-sm text-gray-600">
+            <Link href="/">Home</Link>
+            <Link href="/login" className="rounded-lg border px-3 py-1.5">
+              Already registered? Sign in here
+            </Link>
+          </nav>
         </div>
-    );
+      </header>
+
+      <div className={styles.page}>
+        <div className={styles.ring}>
+          <i style={{ ["--clr" as any]: "#D9DD92" }} />
+          <i style={{ ["--clr" as any]: "#311E10" }} />
+          <i style={{ ["--clr" as any]: "#DD6031" }} />
+          <div className={styles.login}>
+            <h2>Sign up here!</h2>
+
+            <div className={styles.inputBx}>
+              <input type="text" placeholder="Username" />
+            </div>
+            <div className={styles.inputBx}>
+              <input type="text" placeholder="Email" />
+            </div>
+            <div className={styles.inputBx}>
+              <input type="password" placeholder="Password" />
+            </div>
+            <div className={`${styles.inputBx} ${styles.inputBxAccent}`}>
+              <input type="submit" value="Register!" />
+            </div>
+            <div className={`${styles.inputBx} ${styles.inputBxAccent}`}>
+              <input type="submit" value="Sign up with Google" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </>
+  );
 }
