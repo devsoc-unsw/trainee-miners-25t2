@@ -55,14 +55,85 @@ model Session {
 }
 
 model User {
-    id            String    @id @default(cuid())
-    name          String?
-    email         String?   @unique
-    emailVerified DateTime?
-    image         String?
-    accounts      Account[]
-    sessions      Session[]
-    posts         Post[]
+    id             String          @id @default(cuid())
+    name           String?
+    email          String?         @unique
+    emailVerified  DateTime?
+    image          String?
+    accounts       Account[]
+    sessions       Session[]
+    posts          Post[]
+    forms          Form[]
+    formResponses  FormResponse[]
+    templateBlocks TemplateBlock[]
+}
+
+model Form {
+    id          String   @id @default(cuid())
+    title       String
+    description String?
+    fields      Json // Store form field configuration as JSON
+    isPublic    Boolean  @default(false)
+    isActive    Boolean  @default(true)
+    createdAt   DateTime @default(now())
+    updatedAt   DateTime @updatedAt
+
+    createdBy   User   @relation(fields: [createdById], references: [id])
+    createdById String
+
+    responses FormResponse[]
+
+    @@index([createdById])
+    @@index([isPublic])
+}
+
+model FormResponse {
+    id        String   @id @default(cuid())
+    data      Json // Store response data as JSON
+    createdAt DateTime @default(now())
+
+    form   Form   @relation(fields: [formId], references: [id], onDelete: Cascade)
+    formId String
+
+    respondent   User?   @relation(fields: [respondentId], references: [id])
+    respondentId String?
+
+    @@index([formId])
+    @@index([respondentId])
+}
+
+model FormTemplate {
+    id          String   @id @default(cuid())
+    name        String
+    description String?
+    category    String
+    fields      Json // Pre-defined form field configuration
+    isPublic    Boolean  @default(true)
+    createdAt   DateTime @default(now())
+    updatedAt   DateTime @updatedAt
+
+    @@index([category])
+    @@index([isPublic])
+}
+
+model TemplateBlock {
+    id          String   @id @default(cuid())
+    name        String
+    description String?
+    category    String
+    fields      Json // Template block field configuration
+    isCustom    Boolean  @default(false)
+    isPublic    Boolean  @default(true)
+    createdAt   DateTime @default(now())
+    updatedAt   DateTime @updatedAt
+
+    createdBy   User?   @relation(fields: [createdById], references: [id])
+    createdById String?
+
+    @@index([category])
+    @@index([isCustom])
+    @@index([isPublic])
+    @@index([createdById])
 }
 
 model VerificationToken {

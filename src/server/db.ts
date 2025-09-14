@@ -8,4 +8,7 @@ export const prisma =
     // log: ["query", "error", "warn"], // optional
   });
 
+// Also export as db for backward compatibility
+export const db = prisma;
+
 if (process.env.NODE_ENV !== "production") globalForPrisma.prisma = prisma;
