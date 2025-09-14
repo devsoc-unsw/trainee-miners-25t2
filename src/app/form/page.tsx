@@ -1,6 +1,5 @@
 import { Button } from "~/components/ui/button";
 import styles from "./form.module.css"
-
 import Link from "next/link";
 import {
   SquarePen, Mic, Zap, Users, Shield, Clock, MessageSquare,
@@ -9,6 +8,13 @@ import {
 
 
 import FormHeader from "./FormHeader"
+import FormSearch from "./FormSearch";
+import Preview from "./pageBody/formPreview"
+import Structure from "./pageBody/formStructure"
+import TemplateBlocks from "./pageBody/templateBlocks";
+import { templates } from "./formTemplates"
+import { selectedTemplates } from "./formTemplates"
+
 
 export default function formPage() {
     return (
@@ -34,8 +40,21 @@ export default function formPage() {
             </div>
 
             {/* Actual form page*/}
-            <div className="bg-red-50 w-[80vw]">
+            <div className="bg-purple-50 w-[80vw] p-10">
                 <FormHeader />
+
+                <FormSearch />
+
+                {/* Main Body */}
+                <div className="mt-5 grid grid-cols-2 gap-10">
+                    <div className="row-span-2">
+                        <Preview forms={selectedTemplates}/>
+                    </div>
+                    
+                    
+                    <Structure forms={selectedTemplates}/>
+                    <TemplateBlocks forms={templates}/>
+                </div>
             </div>
         </div>
     )
